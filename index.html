@@ -7,10 +7,8 @@
   </head>
   <body>
     <!-- First use API calls to populate the following sections of the DOM with your own data -->
-    <h1 id="github-handle">Your name here</h1>
+    <a id="github-link" href="#" target="blank"><h1 id="github-handle">Your name here</h1></a>
     <img src="#" alt="gitHub-avatar" id="github-avatar" />
-    <!-- <p id="location">Location:&nbsp;<span id="my-location">London</span></p> -->
-    <!-- <p id="followers">Number of followers:&nbsp;<span id="followers_number">10</span></p> -->
     <p id="repos">Number of repos:&nbsp;<span id="my-repos"></span></p>
 
     <!-- Now we'll show details of of your repos -->
@@ -19,11 +17,13 @@
     <hr />
 
     <!-- let's focus on one of your repos - the first in the list! we'll have to make another API call -->
-    <h3 id="repo_name"></h3>
+
+    <h3>My top repo</h3>
+    <a id="repo_link" href="#" target="blank"><h4 id="repo_name"></h4></a>
     <p>Created:&nbsp;<span id="repo_created"></span></p>
     <p>Number of open issues:&nbsp;<span id="repo_open-issues"></span></p>
     <p>People watching:&nbsp;<span id="repo_watchers"></span></p>
-    <!-- don't cheat by looking at the solution -->
+  <!-- don't look at the solution until you've had a go yourself! -->
     <script src="./solution.js"></script>
   </body>
 </html>

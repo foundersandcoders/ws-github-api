@@ -73,7 +73,8 @@ function getRepo (details, cb) {
     var response = JSON.parse(result);
     var repoDetails = {
       name: response.name,
-      created: response.created_at,
+      url: response.html_url,
+      created: response.created_at.substr(0, 10),
       issues: response.open_issues,
       watchers: response.watchers
     };
@@ -87,11 +88,13 @@ function getRepo (details, cb) {
 
 function updateDOM (error, obj) {
   document.getElementById("github-handle").textContent = githubHandle;
+  document.getElementById("github-link").href = "https://github.com/" + githubHandle;
   document.getElementById("github-avatar").src = obj.userDetails.img;
   document.getElementById("my-repos").textContent = obj.userDetails.repos;
   document.getElementById("my-repo-languages").textContent = obj.userDetails.languages.join(", ");
   document.getElementById("my-stars").textContent = obj.userDetails.stars;
   document.getElementById("repo_name").textContent = obj.repoDetails.name;
+  document.getElementById("repo_link").href = obj.repoDetails.url;
   document.getElementById("repo_created").textContent = obj.repoDetails.created;
   document.getElementById("repo_open-issues").textContent = obj.repoDetails.issues;
   document.getElementById("repo_watchers").textContent = obj.repoDetails.watchers;
