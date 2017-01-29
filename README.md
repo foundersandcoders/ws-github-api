@@ -69,3 +69,9 @@ At the moment, your app is just getting data about one GitHub user. But what if 
 ## Challenge 3: 100% code coverage
 
 How could you test your API calls? Try and write some tests for the different parts of your application. Aim for full test coverage.
+
+-----
+
+## Solution!
+
+There are many ways to go about this challenge. To see a working solution (to part 1 + challenge 1) pull down the branch "solution" and check out solution.js (and the tests!).
