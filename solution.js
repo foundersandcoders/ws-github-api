@@ -1,10 +1,24 @@
 var githubHandle = "emilyb7";
 
+function getLanguages (arr) {
+  return arr.map(function(obj) {
+    return obj.language;
+  })
+  .reduce(function(a, b) {
+    return a.concat(!!b && a.indexOf(b) < 0 ? [b] : []);
+  }, []);
+}
+
+function countStars (arr) {
+  return arr.reduce(function(a, b) {
+    return a + b.stargazers_count;
+  }, 0);
+}
+
 function request (url, cb) {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4 && xhr.status === 200) {
-      console.log(xhr);
       cb(null, xhr.responseText);
     } else {
       console.log("waiting for response");
@@ -41,10 +55,8 @@ function getUserRepoDetails (handle, cb) {
     var userDetails = {
       img: response[0].owner.avatar_url,
       repos: response.length,
-      // languages: getLanguages(response),
-      languages: ["HTML", "CSS", "JavaScript"],
-      // stars: countStars(response),
-      stars: 18,
+      languages: getLanguages(response),
+      stars: countStars(response),
       firstRepoUrl: response[0].url
     };
     return cb(null, userDetails);
