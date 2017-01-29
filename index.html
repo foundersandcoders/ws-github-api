@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>GitHub API workshop</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- First use API calls to populate the following sections of the DOM with your own data -->
+    <h1 id="github-handle">Your name here</h1>
+    <img src="#" alt="gitHub-avatar" id="github-avatar" />
+    <!-- <p id="location">Location:&nbsp;<span id="my-location">London</span></p> -->
+    <!-- <p id="followers">Number of followers:&nbsp;<span id="followers_number">10</span></p> -->
+    <p id="repos">Number of repos:&nbsp;<span id="my-repos"></span></p>
+
+    <!-- Now we'll show details of of your repos -->
+    <p id="languages">Languages:&nbsp;<span id="my-repo-languages"></span></p>
+    <p id="stargazers">Total stars:&nbsp;<span id="my-stars"></span></p>
+    <hr />
+
+    <!-- let's focus on one of your repos - the first in the list! we'll have to make another API call -->
+    <h3 id="repo_name"></h3>
+    <p>Created:&nbsp;<span id="repo_created"></span></p>
+    <p>Number of open issues:&nbsp;<span id="repo_open-issues"></span></p>
+    <p>People watching:&nbsp;<span id="repo_watchers"></span></p>
+    <!-- don't cheat by looking at the solution -->
+    <script src="./solution.js"></script>
+  </body>
+</html>
