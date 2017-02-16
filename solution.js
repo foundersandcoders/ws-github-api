@@ -87,17 +87,17 @@ function getRepo (details, cb) {
 }
 
 function updateDOM (error, obj) {
-  document.getElementById("github-handle").textContent = githubHandle;
-  document.getElementById("github-link").href = "https://github.com/" + githubHandle;
-  document.getElementById("github-avatar").src = obj.userDetails.img;
-  document.getElementById("my-repos").textContent = obj.userDetails.repos;
-  document.getElementById("my-repo-languages").textContent = obj.userDetails.languages.join(", ");
-  document.getElementById("my-stars").textContent = obj.userDetails.stars;
-  document.getElementById("repo_name").textContent = obj.repoDetails.name;
-  document.getElementById("repo_link").href = obj.repoDetails.url;
-  document.getElementById("repo_created").textContent = obj.repoDetails.created;
-  document.getElementById("repo_open-issues").textContent = obj.repoDetails.issues;
-  document.getElementById("repo_watchers").textContent = obj.repoDetails.watchers;
+  document.getElementById("github-user-handle").textContent = githubHandle;
+  document.getElementById("github-user-link").href = "https://github.com/" + githubHandle;
+  document.getElementById("github-user-avatar").src = obj.userDetails.img;
+  document.getElementById("github-user-repos").textContent = obj.userDetails.repos;
+  document.getElementById("github-repos-languages").textContent = obj.userDetails.languages.join(", ");
+  document.getElementById("github-repos-stars").textContent = obj.userDetails.stars;
+  document.getElementById("github-repo-name").textContent = obj.repoDetails.name;
+  document.getElementById("github-repo-link").href = obj.repoDetails.url;
+  document.getElementById("github-repo-created").textContent = obj.repoDetails.created;
+  document.getElementById("github-repo-open-issues").textContent = obj.repoDetails.issues;
+  document.getElementById("github-repo-watchers").textContent = obj.repoDetails.watchers;
   return;
 }
 
