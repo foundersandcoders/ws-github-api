@@ -25,6 +25,10 @@ You can make calls to the GitHub API without an API key. However, the rate limit
 
 To increase your rate limit you can [create an access token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/). **Note that this is NOT good practice: access tokens (which are not the same as API keys) should always be kept private and never, ever pushed up to GitHub! Use your access token for this workshop only and do not share with anyone else**.
 
+Once you've got your access token, you can add it to the URLs you call like this:
+
+```https://api.github.com/users/octocat/orgs?access_token=YOUR_ACCESS_TOKEN```
+
 Try and complete Task 1 with at least 2 tests. That's the most important part of today's workshop. The other parts should be treated as extra challenges.
 
 ## Task
@@ -47,7 +51,7 @@ How could you go about getting the relevant data from the GitHub API?
 
 How might you have to adapt your code from the first exercise?
 
-What different ways can you think of structuring your code? And what are the advantages of each? (think back to things you learnt last week too! 💧💧💧) 
+What different ways can you think of structuring your code? And what are the advantages of each? (think back to things you learnt last week too! 💧💧💧)
 
 Try and at least come up with an **idea** of how you might do this. It will be very useful when you come to your end-of-week project!
 
