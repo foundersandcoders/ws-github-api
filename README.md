@@ -27,7 +27,7 @@ To increase your rate limit you can [create an access token](https://help.github
 
 Try and complete Task 1 with at least 2 tests. That's the most important part of today's workshop. The other parts should be treated as extra challenges.
 
-## Task 1
+## Task
 
 Use everything you've learned about APIs and callbacks to make a call to the GitHub API that gets details of _your_ GitHub repos.
 
@@ -37,9 +37,7 @@ You don't have to stick to the template I've prepared for you. By all means, you
 
 Try and write a couple of tests. A tests folder with a link to QUnit is set up for you.
 
-
 -----
-
 
 ## Challenge 1.0: make another API call
 
@@ -49,7 +47,7 @@ How could you go about getting the relevant data from the GitHub API?
 
 How might you have to adapt your code from the first exercise?
 
-What different ways can you think of structuring your code?
+What different ways can you think of structuring your code? And what are the advantages of each? (think back to things you learnt last week too! 💧💧💧) 
 
 Try and at least come up with an **idea** of how you might do this. It will be very useful when you come to your end-of-week project!
 
