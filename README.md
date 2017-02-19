@@ -1,14 +1,16 @@
 # workshop-APIs
 
-In this workshop we'll be using the GitHub API in order to practise:
+In this workshop we'll build on things we've learnt so far by using the GitHub API in order to practise:
 - Making HTTP Get requests on the client side
 - Callbacks
 - Working with large amounts of JSON-formatted data
 - DOM manipulation
 
+
 ## Remember
 
 We are using browser-friendly, vanilla JavaScript. No promises, and no ES6 syntax!
+
 
 ## Getting started
 
@@ -29,9 +31,9 @@ Once you've got your access token, you can add it to the URLs you call like this
 
 [https://api.github.com/users/octocat/orgs?access_token=YOUR_ACCESS_TOKEN]
 
-Try and complete Task 1 with at least 2 tests. That's the most important part of today's workshop. The other parts should be treated as extra challenges.
+Try and complete Task 1 with at least 2 tests and don't rush ahead to the challenges. This is the most important part of today's workshop. The other parts should be treated as extra challenges.
 
-## Task (one hour)
+## Task 1 (45 mins - 1 hour)
 
 Use everything you've learned about APIs and callbacks to make a call to the GitHub API that gets details of _your_ GitHub repos.
 
@@ -39,13 +41,13 @@ Use the response to populate your HTML template down to the horizontal line.
 
 You don't have to stick to the template I've prepared for you. By all means, you can choose to show different data from the API and to present it any way you like.
 
-Try and write a couple of tests. A tests folder with a link to QUnit is set up for you.
+Write a couple of tests. A tests folder with a link to QUnit is set up for you.
 
 -----
 
-## Challenges (one hour)
+## Challenges (one hour, longer if teams finish the above quicker)
 
-Have a go at one (or more) of the challenges below. You must pair program! You may have to do a little bit of independent research. At the end of the session we'll expect all pairs to present for 2-5 minutes.
+Have a go at one (or more) of the challenges below. Do pair program! You may have to do a little bit of independent research. At the end of the session we'll expect all pairs to present for 2-5 minutes.
 
 ### Challenge 1.0: make another API call
 
@@ -87,3 +89,5 @@ Prepare for a quick 5-minute presentation in pairs on your findings!
 ## Solution!
 
 There are many ways to go about this challenge. To see a working solution (to part 1 + challenge 1) pull down the branch "solution" and check out solution.js (and the tests!).
+
+Disclosure: it took me much longer than 2 hours to perfect my solution! 
