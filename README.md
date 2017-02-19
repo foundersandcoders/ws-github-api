@@ -1,14 +1,14 @@
 # workshop-APIs
 
 In this workshop we'll be using the GitHub API in order to practise:
-- Making HTTP Get requests
+- Making HTTP Get requests on the client side
 - Callbacks
 - Working with large amounts of JSON-formatted data
 - DOM manipulation
 
 ## Remember
 
-We are using browser-friendly vanilla JavaScript. No promises, and no ES6 syntax!
+We are using browser-friendly, vanilla JavaScript. No promises, and no ES6 syntax!
 
 ## Getting started
 
@@ -27,11 +27,11 @@ To increase your rate limit you can [create an access token](https://help.github
 
 Once you've got your access token, you can add it to the URLs you call like this:
 
-```https://api.github.com/users/octocat/orgs?access_token=YOUR_ACCESS_TOKEN```
+[https://api.github.com/users/octocat/orgs?access_token=YOUR_ACCESS_TOKEN]
 
 Try and complete Task 1 with at least 2 tests. That's the most important part of today's workshop. The other parts should be treated as extra challenges.
 
-## Task
+## Task (one hour)
 
 Use everything you've learned about APIs and callbacks to make a call to the GitHub API that gets details of _your_ GitHub repos.
 
@@ -43,19 +43,23 @@ Try and write a couple of tests. A tests folder with a link to QUnit is set up f
 
 -----
 
-## Challenge 1.0: make another API call
+## Challenges (one hour)
+
+Have a go at one (or more) of the challenges below. You must pair program! You may have to do a little bit of independent research. At the end of the session we'll expect all pairs to present for 2-5 minutes.
+
+### Challenge 1.0: make another API call
 
 Go back to ```index.html``` and remove the commented-out part of the page. This is for showing of details of one of your repos. It can be the first repo in your list, the last, the most popular, or whichever one you like.
 
-How could you go about getting the relevant data from the GitHub API?
+How could you go about getting the relevant data from the GitHub API? Refer back to GitHub's documentation for help.
 
 How might you have to adapt your code from the first exercise?
 
-What different ways can you think of structuring your code? And what are the advantages of each? (think back to things you learnt last week too! 💧💧💧)
+What different ways can you think of structuring your code? And what are the advantages of each? (think back to things you learnt last week too! 💧 => 💧 => 💧)
 
 Try and at least come up with an **idea** of how you might do this. It will be very useful when you come to your end-of-week project!
 
-## Challenge 1.2: even more API calls
+### Challenge 1.2: even more API calls
 
 What other data might you want your application to show and what API calls would you need to make?
 
@@ -63,16 +67,22 @@ Does the structure of your code (after challenge 1.0) allow for you to easily ac
 
 What problems can you foresee?
 
-## Challenge 2: adapt your app for different purposes
+### Challenge 2: adapt your app for different users!
 
-At the moment, your app is just getting data about one GitHub user. But what if you wanted to use it to compare everyone from Founders and Coders? Or to get data about a custom GitHub user? How might you adapt your application for this purpose?
+At the moment, your app is just getting data about one GitHub user. But what if you wanted to use it to compare everyone from Founders & Coders? Or to get data about a custom GitHub user? How might you adapt your application for this purpose?
+
+Try and sketch out a plan!
 
 
-## Challenge 3: 100% code coverage
+### Challenge 3: code coverage
 
-How could you test your API calls? Try and write some tests for the different parts of your application. Aim for full test coverage.
+How could you test your app? Try and write some tests for the different parts of your application.
 
 -----
+
+## Presentations
+
+Prepare for a quick 5-minute presentation in pairs on your findings!
 
 ## Solution!
 
