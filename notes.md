@@ -10,4 +10,6 @@ I've therefore suggested 45-minutes to one hour for the initial part of the work
 
 It would be great if different groups could work on different challenges!
 
-Students should prepare to give a quick presentation at the end, where they report back to the group on interesting things they have learnt.
+However, if this all proves to be too challenging then the priority is that students can at least get through task 1!
+
+Students should prepare to give a quick team / pair presentation at the end, where they report back to the group on interesting things they have learnt.

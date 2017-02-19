@@ -6,6 +6,7 @@ In this workshop we'll build on things we've learnt so far by using the GitHub A
 - Working with large amounts of JSON-formatted data
 - DOM manipulation
 
+**Mentors** see [./notes.md].
 
 ## Remember
 
@@ -90,4 +91,4 @@ Prepare for a quick 5-minute presentation in pairs on your findings!
 
 There are many ways to go about this challenge. To see a working solution (to part 1 + challenge 1) pull down the branch "solution" and check out solution.js (and the tests!).
 
-Disclosure: it took me much longer than 2 hours to perfect my solution! 
+Disclosure: it took me much longer than 2 hours to perfect my solution!
