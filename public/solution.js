@@ -17,6 +17,10 @@ function countStars (arr) {
   }, 0);
 }
 
+function getUsername (user) {
+  return user.login;
+}
+
 /* success handlers - functions that get used directly in the callback */
 
 function success_userDetails (json) {
@@ -29,8 +33,8 @@ function success_userDetails (json) {
       stars: countStars(response),
     },
     firstRepo: {
-      name: "response[0].name",
-      url: response[0].url,
+      name: response[0].name,
+      url: response[0].html_url,
       created: response[0].created_at.substr(0, 10),
       issues: response[0].open_issues,
       watchers: response[0].watchers,
@@ -42,9 +46,7 @@ function success_userDetails (json) {
 
 function success_contributorDetails (obj, json) {
   var response = JSON.parse(json);
-  var contributors = response.map(function(user) {
-    return user.login;
-  });
+  var contributors = response.map(getUsername);
   var firstRepo = Object.assign({}, obj.firstRepo, { contributors: contributors, });
   return Object.assign({}, obj, { firstRepo: firstRepo, });
 }
