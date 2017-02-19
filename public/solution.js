@@ -1,5 +1,7 @@
 var githubHandle = "emilyb7";
 
+/* helper functions */
+
 function getLanguages (arr) {
   return arr.map(function(obj) {
     return obj.language;
@@ -15,6 +17,8 @@ function countStars (arr) {
   }, 0);
 }
 
+/* generic request function, can be recycled endlessly! */
+
 function request (url, cb) {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
@@ -28,13 +32,15 @@ function request (url, cb) {
   xhr.send();
 }
 
+/* keeps your callbacks easy to handle! */
+
 function waterfall (args, tasks, cb) {
   var nextTask = tasks[0];
   var remainingTasks = tasks.slice(1);
   if (typeof nextTask !== 'undefined') {
     nextTask(args, function(error, result) {
       if (error) {
-        cb (error);
+        cb(error);
         return ;
       }
       waterfall(result, remainingTasks, cb);
@@ -43,6 +49,8 @@ function waterfall (args, tasks, cb) {
   }
   return cb(null, args);
 }
+
+/* these 3 functions get passed into the waterfall function */
 
 function getUserRepoDetails (handle, cb) {
   var url = "https://api.github.com/users/" + handle + "/repos";
