@@ -8,15 +8,26 @@ QUnit.test("getLanguages an array of github repos and returns an array of langua
 
 QUnit.test("countStars an array of github repos and returns an integer representing the total number of stars for all repos", function (assert) {
   assert.equal(countStars(JSON.parse(json)), 3);
+  assert.equal(countStars([]), 0, "if array empty, returns 0");
 });
 
-QUnit.test("handler_userRepoDetails takes a JSON representing a github user's repos, and returns an object with key details", function (assert) {
+QUnit.test("success_userDetails takes a JSON string representing a github user's repos, and returns an object with key details", function (assert) {
   var obj = {
-    img: 'https://avatars.githubusercontent.com/u/17532458?v=3',
-    repos: 18,
-    languages: [CSS, JavaScript, HTML, Elm],
-    stars: 10,
-    firstRepoUrl: 'https://github.com/emilyb7/cookies-with-hapi-demo'
+    userDetails: {
+      img: 'https://avatars.githubusercontent.com/u/17532458?v=3',
+      repos: 2,
+      languages: ['HTML', 'JavaScript'],
+      stars: 3,
+    },
+    firstRepo: {
+      name: "workshop-cms",
+      url: "https://github.com/emilyb7/workshop-cms",
+      created: "2016-11-06",
+      issues: 0,
+      watchers: 0,
+      contributors_url: "https://api.github.com/repos/emilyb7/workshop-cms/contributors",
+      contributors: [],
+    },
   };
-  assert.deepEqual(getLanguages(json), obj);
+  assert.deepEqual(success_userDetails(json), obj);
 });

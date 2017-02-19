@@ -17,19 +17,39 @@ function countStars (arr) {
   }, 0);
 }
 
-/* handlers - functions that get used directly in the callback */
-function handler_userRepoDetails (json) {
+/* success handlers - functions that get used directly in the callback */
+
+function success_userDetails (json) {
   var response = JSON.parse(json);
   return {
-    img: response[0].owner.avatar_url,
-    repos: response.length,
-    languages: getLanguages(response),
-    stars: countStars(response),
-    firstRepoUrl: response[0].url
+    userDetails: {
+      img: response[0].owner.avatar_url,
+      repos: response.length,
+      languages: getLanguages(response),
+      stars: countStars(response),
+    },
+    firstRepo: {
+      name: "response[0].name",
+      url: response[0].url,
+      created: response[0].created_at.substr(0, 10),
+      issues: response[0].open_issues,
+      watchers: response[0].watchers,
+      contributors_url: response[0].contributors_url,
+      contributors: [],
+    },
   };
 }
 
-/* generic request function, can be recycled endlessly! */
+function success_contributorDetails (obj, json) {
+  var response = JSON.parse(json);
+  var contributors = response.map(function(user) {
+    return user.login;
+  });
+  var firstRepo = Object.assign({}, obj.firstRepo, { contributors: contributors, });
+  return Object.assign({}, obj, { firstRepo: firstRepo, });
+}
+
+/* generic request function, can be recycled over and over! */
 
 function request (url, cb) {
   var xhr = new XMLHttpRequest();
@@ -71,39 +91,19 @@ function getUserRepoDetails (handle, cb) {
       console.log(error);
       return;
     }
-    var response = JSON.parse(result);
-    var userDetails = {
-      img: response[0].owner.avatar_url,
-      repos: response.length,
-      languages: getLanguages(response),
-      stars: countStars(response),
-      firstRepoUrl: response[0].url
-    };
-    return cb(null, userDetails);
+    return cb(null, success_userDetails(result));
   });
 }
 
-function getRepo (details, cb) {
-  var url = details.firstRepoUrl;
-  request(url, function(error, result) {
+function getContributors (details, cb) {
+  var url = details.firstRepo.contributors_url;
+  request(url, function (error, result) {
     if (error) {
       console.log(error);
       return;
     }
-    var response = JSON.parse(result);
-    var repoDetails = {
-      name: response.name,
-      url: response.html_url,
-      created: response.created_at.substr(0, 10),
-      issues: response.open_issues,
-      watchers: response.watchers
-    };
-    var returnObj = {
-      userDetails: details,
-      repoDetails: repoDetails
-    };
-    return cb(null, returnObj);
-  });
+    return cb(null, success_contributorDetails(details, result))
+  })
 }
 
 function updateDOM (error, obj) {
@@ -113,12 +113,13 @@ function updateDOM (error, obj) {
   document.getElementById("github-user-repos").textContent = obj.userDetails.repos;
   document.getElementById("github-repos-languages").textContent = obj.userDetails.languages.join(", ");
   document.getElementById("github-repos-stars").textContent = obj.userDetails.stars;
-  document.getElementById("github-repo-name").textContent = obj.repoDetails.name;
-  document.getElementById("github-repo-link").href = obj.repoDetails.url;
-  document.getElementById("github-repo-created").textContent = obj.repoDetails.created;
-  document.getElementById("github-repo-open-issues").textContent = obj.repoDetails.issues;
-  document.getElementById("github-repo-watchers").textContent = obj.repoDetails.watchers;
+  document.getElementById("github-repo-name").textContent = obj.firstRepo.name;
+  document.getElementById("github-repo-link").href = obj.firstRepo.url;
+  document.getElementById("github-repo-created").textContent = obj.firstRepo.created;
+  document.getElementById("github-repo-open-issues").textContent = obj.firstRepo.issues;
+  document.getElementById("github-repo-watchers").textContent = obj.firstRepo.watchers;
+  document.getElementById("github-repo-contributors").textContent = obj.firstRepo.contributors.join(", ");
   return;
 }
 
-waterfall (githubHandle, [getUserRepoDetails, getRepo], updateDOM);
+waterfall (githubHandle, [getUserRepoDetails, getContributors, ], updateDOM);
