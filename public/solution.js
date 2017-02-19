@@ -17,6 +17,18 @@ function countStars (arr) {
   }, 0);
 }
 
+/* handlers - functions that get used directly in the callback */
+function handler_userRepoDetails (json) {
+  var response = JSON.parse(json);
+  return {
+    img: response[0].owner.avatar_url,
+    repos: response.length,
+    languages: getLanguages(response),
+    stars: countStars(response),
+    firstRepoUrl: response[0].url
+  };
+}
+
 /* generic request function, can be recycled endlessly! */
 
 function request (url, cb) {
