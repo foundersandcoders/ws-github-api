@@ -1,0 +1,15 @@
+body {
+  font-family: sans-serif;
+  color: #333;
+  background-color: pink;
+  font-family: monospace;
+}
+
+img {
+  height: 200px;
+  width: 200px;
+}
+
+a, a:hover, a:active, a:visited {
+  color: #555;
+}
