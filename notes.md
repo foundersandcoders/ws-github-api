@@ -13,3 +13,5 @@ It would be great if different groups could work on different challenges!
 However, if this all proves to be too challenging then the priority is that students can at least get through task 1!
 
 Students should prepare to give a quick team / pair presentation at the end, where they report back to the group on interesting things they have learnt.
+
+A working solution is on [GitHub pages](https://emilyb7.github.io/workshop-APIs/). **Students,** don't look at the code until you've attempted your own version!
