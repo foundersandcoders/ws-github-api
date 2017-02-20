@@ -6,7 +6,7 @@ In this workshop we'll build on things we've learnt so far by using the GitHub A
 - Working with large amounts of JSON-formatted data
 - DOM manipulation
 
-**Mentors** see [notes.md](https://github.com/emilyb7/workshop-APIs/blob/master/notes.md.
+**Mentors** see [notes.md](https://github.com/emilyb7/workshop-APIs/blob/master/notes.md).
 
 ## Remember
 
