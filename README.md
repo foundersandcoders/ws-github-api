@@ -12,12 +12,14 @@ In this workshop we'll build on things we've learnt so far by using the GitHub A
 
 We are using browser-friendly, vanilla JavaScript. No promises, and no ES6 syntax!
 
+Pair programme!
+
 
 ## Getting started
 
 1. Clone this repo and open in your text editor
 
-2. Open index.html in your browser. You'll find a template with space for some info which you can find on your GitHub profile. Your job is to fill it with data using the GitHub API :)
+2. Open index.html in your browser. You'll find a template with space for some info which you can find on your GitHub profile.
 
 
 ## GitHub API
