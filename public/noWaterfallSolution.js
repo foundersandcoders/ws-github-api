@@ -66,6 +66,26 @@ function request (url, cb) {
   xhr.send();
 }
 
+/* keeps your callbacks easy to handle! */
+
+function waterfall (args, tasks, cb) {
+  var nextTask = tasks[0];
+  var remainingTasks = tasks.slice(1);
+  if (typeof nextTask !== 'undefined') {
+    nextTask(args, function(error, result) {
+      if (error) {
+        cb(error);
+        return ;
+      }
+      waterfall(result, remainingTasks, cb);
+    });
+    return ;
+  }
+  return cb(null, args);
+}
+
+/* these 3 functions get passed into the waterfall function */
+
 function getUserRepoDetails (handle, cb) {
   var url = "https://api.github.com/users/" + handle + "/repos";
   request(url, function (error, result) {
@@ -103,3 +123,5 @@ function updateDOM (error, obj) {
   document.getElementById("github-repo-contributors").textContent = obj.firstRepo.contributors.join(", ");
   return;
 }
+
+waterfall (githubHandle, [getUserRepoDetails, getContributors, ], updateDOM);
