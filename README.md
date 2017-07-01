@@ -54,7 +54,7 @@ Have a go at one (or more) of the challenges below. Do pair program! You may hav
 
 ### Challenge 1.0: make another API call
 
-Go back to ```index.html``` and remove the commented-out part of the page. This is for showing of details of one of your repos. It can be the first repo in your list, the last, the most popular, or whichever one you like.
+Go back to ```index.html``` and un-comment the commented-out HTML below line 20. This is for showing of details of one of your repos. It can be the first repo in your list, the last, the most popular, or whichever one you like.
 
 How could you go about getting the relevant data from the GitHub API? Refer back to GitHub's documentation for help.
 
