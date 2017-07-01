@@ -43,7 +43,7 @@ Try and write a couple of tests. A tests folder with a link to QUnit is set up f
 
 ## Challenge 1.0: make another API call
 
-Go back to ```index.html``` and remove the commented-out part of the page. This is for showing of details of one of your repos. It can be the first repo in your list, the last, the most popular, or whichever one you like.
+Go back to ```index.html``` and un-comment the commented-out HTML below line 20. This is for showing of details of one of your repos. It can be the first repo in your list, the last, the most popular, or whichever one you like.
 
 How could you go about getting the relevant data from the GitHub API?
 
