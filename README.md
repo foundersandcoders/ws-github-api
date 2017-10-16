@@ -83,7 +83,7 @@ Try and sketch out a plan!
 
 How could you test your app? Try and write some tests for the different parts of your application then check code coverage of those tests.
 
-Do you remember that you have been introduced to ```code coverge``` in research afternoon in week2 ?
+Do you remember that you have been introduced to ```code coverage``` in research afternoon in week2 ?
 Basically, Code coverage is a measurement of how many lines/blocks/arcs of your code are executed while the automated tests are running.
 
 For example, a program with high code coverage, measured as a percentage, has had more of its source code executed during testing which suggests it has a lower chance of containing undetected software bugs compared to a program with low code coverage.
