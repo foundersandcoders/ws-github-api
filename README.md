@@ -52,6 +52,7 @@ Write a couple of tests. A tests folder with a link to QUnit is set up for you.
 
 Have a go at one (or more) of the challenges below. Do pair program! You may have to do a little bit of independent research. At the end of the session we'll expect all pairs to present for 2-5 minutes.
 
+
 ### Challenge 1.0: make another API call
 
 Go back to ```index.html``` and un-comment the commented-out HTML below line 20. This is for showing of details of one of your repos. It can be the first repo in your list, the last, the most popular, or whichever one you like.
