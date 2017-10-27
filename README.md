@@ -60,8 +60,6 @@ How could you go about getting the relevant data from the GitHub API? Refer back
 
 How might you have to adapt your code from the first exercise?
 
-What different ways can you think of structuring your code? And what are the advantages of each? (think back to things you learnt last week too! 💧 => 💧 => 💧)
-
 Try and at least come up with an **idea** of how you might do this. It will be very useful when you come to your end-of-week project!
 
 ### Challenge 1.2: even more API calls
