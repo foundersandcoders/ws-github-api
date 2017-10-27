@@ -1,3 +1,8 @@
+// this solution is a bit more advanced.
+//You'll see some concepts here that you might not have dealt with yet.
+// Don't worry if it seems confusing for now. There are some comments to help you out!
+
+// note this is the only global variable we are using!
 var githubHandle = "emilyb7";
 
 /* helper functions */
@@ -73,7 +78,7 @@ function request(url, cb) {
   xhr.send();
 }
 
-/* keeps your callbacks easy to handle! */
+/* nice way to keep your callbacks easy to handle! */
 
 function waterfall(args, tasks, cb) {
   var nextTask = tasks[0];
@@ -91,7 +96,8 @@ function waterfall(args, tasks, cb) {
   return cb(null, args);
 }
 
-/* these 3 functions get passed into the waterfall function */
+/* these 3 functions get passed into the waterfall function as an array of TASKS */
+/* Each task calls the next task in the callback function */
 
 function getUserRepoDetails(handle, cb) {
   var url = "https://api.github.com/users/" + handle + "/repos";
@@ -141,4 +147,7 @@ function updateDOM(error, obj) {
   return;
 }
 
+// gitHubhandle is the initial argument passed into the function
+// then we have an array of asynchronous tasks - theses are called in series (each waits for the one before to have finished)
+// when all the async tasks have finished, we call the updateDOM function using the data we fetched from the GitHub API
 waterfall(githubHandle, [getUserRepoDetails, getContributors], updateDOM);
