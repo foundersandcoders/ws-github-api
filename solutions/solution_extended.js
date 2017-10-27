@@ -2,7 +2,7 @@
 //You'll see some concepts here that you might not have dealt with yet.
 // Don't worry if it seems confusing for now. There are some comments to help you out!
 
-// note this is the only global variable we are using!
+// note this is the only global variable we are using. How could we avoid even this?
 var githubHandle = "emilyb7";
 
 /* helper functions */
