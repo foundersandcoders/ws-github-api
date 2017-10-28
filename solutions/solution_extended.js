@@ -86,8 +86,7 @@ function waterfall(args, tasks, cb) {
   if (typeof nextTask !== "undefined") {
     nextTask(args, function(error, result) {
       if (error) {
-        cb(error);
-        return;
+        return cb(error);
       }
       waterfall(result, remainingTasks, cb);
     });
@@ -114,37 +113,42 @@ function getContributors(details, cb) {
   var url = details.firstRepo.contributors_url;
   request(url, function(error, result) {
     if (error) {
-      console.log(error);
-      return;
+      return console.log(error);
     }
     return cb(null, success_contributorDetails(details, result));
   });
 }
 
-function updateDOM(error, obj) {
+function updateDOM(error, dataObject) {
+  if (error) {
+    return console.log(
+      "Cant't update the DOM right now because of an error " + error
+    );
+  }
   document.getElementById("github-user-handle").textContent = githubHandle;
   document.getElementById("github-user-link").href =
     "https://github.com/" + githubHandle;
-  document.getElementById("github-user-avatar").src = obj.userDetails.img;
+  document.getElementById("github-user-avatar").src =
+    dataObject.userDetails.img;
   document.getElementById("github-user-repos").textContent =
-    obj.userDetails.repos;
+    dataObject.userDetails.repos;
   document.getElementById(
     "github-repos-languages"
-  ).textContent = obj.userDetails.languages.join(", ");
+  ).textContent = dataObject.userDetails.languages.join(", ");
   document.getElementById("github-repos-stars").textContent =
-    obj.userDetails.stars;
-  document.getElementById("github-repo-name").textContent = obj.firstRepo.name;
-  document.getElementById("github-repo-link").href = obj.firstRepo.url;
+    dataObject.userDetails.stars;
+  document.getElementById("github-repo-name").textContent =
+    dataObject.firstRepo.name;
+  document.getElementById("github-repo-link").href = dataObject.firstRepo.url;
   document.getElementById("github-repo-created").textContent =
-    obj.firstRepo.created;
+    dataObject.firstRepo.created;
   document.getElementById("github-repo-open-issues").textContent =
-    obj.firstRepo.issues;
+    dataObject.firstRepo.issues;
   document.getElementById("github-repo-watchers").textContent =
-    obj.firstRepo.watchers;
+    dataObject.firstRepo.watchers;
   document.getElementById(
     "github-repo-contributors"
-  ).textContent = obj.firstRepo.contributors.join(", ");
-  return;
+  ).textContent = dataObject.firstRepo.contributors.join(", ");
 }
 
 // gitHubhandle is the initial argument passed into the function
