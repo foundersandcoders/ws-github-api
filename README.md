@@ -83,7 +83,8 @@ Try and sketch out a plan!
 
 How could you test your app? Try and write some tests for the different parts of your application then check code coverage of those tests.
 
-Do you remember that you have been introduced to ```code coverage``` in research afternoon in week2 ?
+Do you remember that you have been introduced to ```code coverage``` in research afternoon in week 2?
+
 Basically, Code coverage is a measurement of how many lines/blocks/arcs of your code are executed while the automated tests are running.
 
 For example, a program with high code coverage, measured as a percentage, has had more of its source code executed during testing which suggests it has a lower chance of containing undetected software bugs compared to a program with low code coverage.
@@ -92,11 +93,10 @@ For example, a program with high code coverage, measured as a percentage, has ha
 
 This is because code coverage data gives an important insight of how effective our tests are, what parts of our source code are thoroughly executed to find out specific areas of code which are not executed by our tests.
 
-**Introduction code coverage tool**
+**Code coverage tool**
 
-[Istanbul](https://www.npmjs.com/package/istanbul) and [NYC](https://www.npmjs.com/package/nyc) are widely-used tools for testing code coverage.
-You can install them as devdependencies by simply writing a command line ```npm install --save-dev istanbul``` or ```npm install --save-dev nyc``` on terminal. Nyc is Istanbul's state of the art command line interface. The original purpose of nyc was to allow a user to capture test coverage.
-These two started separately but have been merged.
+[NYC](https://www.npmjs.com/package/nyc) is a widely-used tool for testing code coverage.
+You can install them as devDependencies by simply writing a command line ```npm install --save-dev nyc``` on terminal. You can use it with various testing frameworks.
 
 This is an example of code coverage report.
 ![istanbul report](https://files.gitter.im/rinoma/trGG/Screen-Shot-2017-07-10-at-16.20.05.png)
