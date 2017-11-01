@@ -28,11 +28,13 @@ You can find the API docs [here](https://developer.github.com/v3/).
 
 You can make calls to the GitHub API without an API key. However, the rate limit for _unauthorized_ requests is quite low at 60 calls per hour (per IP address).
 
-To increase your rate limit you can [create an access token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/). **Note that this is NOT good practice: access tokens (which are not the same as API keys) should always be kept private and never, ever pushed up to GitHub! Use your access token for this workshop only and do not share with anyone else**.
+To increase your rate limit you can [create an access token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/). When you get to the screen that asks you to _select scopes_, you don't need to select any additional scopes.
+
+**Note that this is NOT good practice: access tokens (which are not the same as API keys) should always be kept private and never, ever pushed up to GitHub! Use your access token for this workshop only and do not share with anyone else**.
 
 Once you've got your access token, you can add it to the URLs you call like this:
 
-[https://api.github.com/users/octocat/orgs?access_token=YOUR_ACCESS_TOKEN]
+`https://api.github.com/users/octocat/orgs?access_token=YOUR_ACCESS_TOKEN`
 
 Try and complete Task 1 with at least 2 tests and don't rush ahead to the challenges. This is the most important part of today's workshop. The other parts should be treated as extra challenges.
 
@@ -44,7 +46,12 @@ Use the response to populate your HTML template down to the horizontal line.
 
 You don't have to stick to the template I've prepared for you. By all means, you can choose to show different data from the API and to present it any way you like.
 
-Write a couple of tests. A tests folder with a link to QUnit is set up for you.
+Write a couple of tests. For testing we'll be using a very simple testing library, [QUnit](https://qunitjs.com/).
+
+A tests folder is already set up to you. Here are some quick instructions for getting started:
+- In `tests/tests.js`, have a look at the examples that are written for you
+- Open `tests/spec.html` in your browser to see the tests pass and fail
+- Add your own tests (use the examples as a guide; here's a link to the [official documentation](http://api.qunitjs.com/QUnit/test))
 
 -----
 
@@ -60,8 +67,6 @@ Go back to ```index.html``` and un-comment the commented-out HTML below line 20.
 How could you go about getting the relevant data from the GitHub API? Refer back to GitHub's documentation for help.
 
 How might you have to adapt your code from the first exercise?
-
-What different ways can you think of structuring your code? And what are the advantages of each? (think back to things you learnt last week too! 💧 => 💧 => 💧)
 
 Try and at least come up with an **idea** of how you might do this. It will be very useful when you come to your end-of-week project!
 
@@ -80,9 +85,28 @@ At the moment, your app is just getting data about one GitHub user. But what if 
 Try and sketch out a plan!
 
 
-### Challenge 3: code coverage
+### Challenge 3: check code coverage of tests
 
-How could you test your app? Try and write some tests for the different parts of your application.
+How could you test your app? Try and write some tests for the different parts of your application then check code coverage of those tests.
+
+Do you remember that you have been introduced to ```code coverage``` in research afternoon in week 2?
+
+Basically, Code coverage is a measurement of how many lines/blocks/arcs of your code are executed while the automated tests are running.
+
+For example, a program with high code coverage, measured as a percentage, has had more of its source code executed during testing which suggests it has a lower chance of containing undetected software bugs compared to a program with low code coverage.
+
+**Why is test code coverage important?**
+
+This is because code coverage data gives an important insight of how effective our tests are, what parts of our source code are thoroughly executed to find out specific areas of code which are not executed by our tests.
+
+**Code coverage tool**
+
+[NYC](https://www.npmjs.com/package/nyc) is a widely-used tool for testing code coverage.
+You can install them as devDependencies by simply writing a command line ```npm install --save-dev nyc``` on terminal. You can use it with various testing frameworks.
+
+This is an example of code coverage report.
+![istanbul report](https://files.gitter.im/rinoma/trGG/Screen-Shot-2017-07-10-at-16.20.05.png)
+
 
 -----
 
