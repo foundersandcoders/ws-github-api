@@ -44,7 +44,12 @@ Use the response to populate your HTML template down to the horizontal line.
 
 You don't have to stick to the template I've prepared for you. By all means, you can choose to show different data from the API and to present it any way you like.
 
-Write a couple of tests. A tests folder with a link to QUnit is set up for you.
+Write a couple of tests. For testing we'll be using a very simple testing library, [QUnit](https://qunitjs.com/).
+
+A tests folder is already set up to you. Here are some quick instructions for getting started:
+- In `tests/tests.js`, have a look at the examples that are written for you
+- Open `tests/spec.html` in your browser to see the tests pass and fail
+- Add your own tests (use the examples as a guide; here's a link to the [official documentation](http://api.qunitjs.com/QUnit/test))
 
 -----
 
