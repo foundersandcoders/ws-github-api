@@ -84,9 +84,28 @@ At the moment, your app is just getting data about one GitHub user. But what if 
 Try and sketch out a plan!
 
 
-### Challenge 3: code coverage
+### Challenge 3: check code coverage of tests
 
-How could you test your app? Try and write some tests for the different parts of your application.
+How could you test your app? Try and write some tests for the different parts of your application then check code coverage of those tests.
+
+Do you remember that you have been introduced to ```code coverage``` in research afternoon in week 2?
+
+Basically, Code coverage is a measurement of how many lines/blocks/arcs of your code are executed while the automated tests are running.
+
+For example, a program with high code coverage, measured as a percentage, has had more of its source code executed during testing which suggests it has a lower chance of containing undetected software bugs compared to a program with low code coverage.
+
+**Why is test code coverage important?**
+
+This is because code coverage data gives an important insight of how effective our tests are, what parts of our source code are thoroughly executed to find out specific areas of code which are not executed by our tests.
+
+**Code coverage tool**
+
+[NYC](https://www.npmjs.com/package/nyc) is a widely-used tool for testing code coverage.
+You can install them as devDependencies by simply writing a command line ```npm install --save-dev nyc``` on terminal. You can use it with various testing frameworks.
+
+This is an example of code coverage report.
+![istanbul report](https://files.gitter.im/rinoma/trGG/Screen-Shot-2017-07-10-at-16.20.05.png)
+
 
 -----
 
