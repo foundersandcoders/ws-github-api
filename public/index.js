@@ -16,6 +16,35 @@ function request(url, callback) {
   xhr.send();
 }
 
+// building helper functions
+function getLanguages (data) {
+  return data
+    .map(function (eachRepo) {
+      return eachRepo.language;
+    })
+    .reduce(function(a, b){
+      return a.concat((b) && a.indexOf(b) < 0 ? [b] : []);
+    }, []);
+}
+
+
+function getUserDetails (json) {
+  var data = JSON.parse(json);// this is result from request
+  console.log(getLanguages(data));
+  };
+  // return an object
+  // var dataObj = {
+  //   userDetails: {
+  //     img : response[0].owner.avatar_url,
+  //     repos : respose.length;
+  //     languages :
+  //   },
+  //   firstRepo: {
+  //
+  //   }
+  // }
+
+
 
 function getRepoDetails (target) {
   var url = 'https://api.github.com/users/' + target + '/repos';
@@ -24,7 +53,8 @@ function getRepoDetails (target) {
       console.log(error);
       return;
     } // if there is no error(null)
-    console.log('this is result', result);
+    // console.log('this is result', result);
+    getUserDetails(result);
   });
 }
 
