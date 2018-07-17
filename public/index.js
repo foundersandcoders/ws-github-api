@@ -1,6 +1,6 @@
 /* let's go! */
 var authToken = "23bc7a831fd94ac9693c1e2cc09aecb29de92b29";
-var name = "Solk10";
+var name = "matthall8";
 var url = "https://api.github.com/users/" + name + "?access_token=" + authToken;
 
 function makeRequest(url, callback){
