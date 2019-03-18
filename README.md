@@ -10,7 +10,7 @@ In this workshop we'll build on things we've learnt so far by using the GitHub A
 
 ## Remember
 
-We are using browser-friendly, vanilla JavaScript. No promises, and no ES6 syntax!
+We are using browser-friendly, vanilla JavaScript. No promises!
 
 Pair programme!
 
